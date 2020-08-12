@@ -28,7 +28,7 @@
               <tbody>
               <tr ng-repeat-start="app in applications | orderBy:orderProp" ng-class="{'started': app.status === 'STARTED', 'app-selected': app.name === fullApplicationDetail.name && !newApp}" id="{{app.name | applicationNameId}}">
                 <td ng-click="getApplicationDetails(app)" style="cursor:pointer"><a ng-click="getApplicationDetails(app)" href="#/applications">{{ app.name }}</a></td>
-                <td ng-click="getApplicationDetails(app)" style="cursor:pointer">{{ app.status | changeAppStatusForDisplay }}</td>
+                <td ng-click="getApplicationDetails(app)" style="cursor:pointer"><a ng-click="getAppState(app)">{{appStateData}} and1  {{getState1}} and2 </a></td>
                 <td class="application" >
                   <div ng-if="app.status === 'CREATED'">
                     <button type="button" class="btn btn-default btn-sm" ng-click="startOrStopApplication(app.name, app.status)">

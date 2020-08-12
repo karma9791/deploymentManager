@@ -370,6 +370,15 @@ angular.module('appControllers').controller('ApplicationCtrl', ['$scope', '$filt
       });
     };
 
+    $scope.getAppState = function(appName) {
+      $scope.getState1 = 'logs from fucntion of Application controler1 for state '+appName +' .';
+      DeploymentManagerService.getApplicationState(appName).then(function(data) {
+        $scope.appStateData = data;
+        //$scope.viewAppProps = true;
+      });
+    };
+
+
     $scope.getAppLogs2 = function() {
       $scope.getLog3 = 'logs from fucntion of Application controler2   '+app.name +' .';
       //DeploymentManagerService.getApplicationLogs().then(function(data) {
